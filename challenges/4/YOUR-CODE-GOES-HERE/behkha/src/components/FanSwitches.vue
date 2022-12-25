@@ -2,10 +2,10 @@
   <div class="container">
     <div class="row">
       <div class="col-6">
-        <Switch title="چرخش" @toggle="onOscillationToggle"/>
+        <Switch title="چرخش" icon="mdi-code-tags" @toggle="onOscillationToggle"/>
       </div>
       <div class="col-6">
-        <Switch title="دستگاه" @toggle="onPowerToggle"/>
+        <Switch title="دستگاه" icon="mdi-power" @toggle="onPowerToggle"/>
       </div>
     </div>
   </div>

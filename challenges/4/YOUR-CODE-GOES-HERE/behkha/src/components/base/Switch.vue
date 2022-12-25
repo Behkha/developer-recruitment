@@ -1,7 +1,8 @@
 <template>
   <div class="card mt-3 p-3">
     <div class="d-flex flex-row-reverse">
-      <h5 class="black-font">{{title}}</h5>
+      <span class="icon mdi" :class="getIcon"></span>
+      <h5 class="black-font my-auto mx-2">{{getTitle}}</h5>
     </div>
     <div class="d-flex flex-row justify-content-between mt-3">
       <SwitchButton class="my-auto" @toggle="onSwitchToggle"/>
@@ -24,6 +25,10 @@ export default defineComponent({
       type: String,
       default: 'Title'
     },
+    icon: {
+      type: String,
+      default: 'mdi-account'
+    }
   },
   data() {
     return {
@@ -35,6 +40,15 @@ export default defineComponent({
       this.status = !this.status;
       this.$emit('toggle', this.status)
     }
+  },
+  computed: {
+    getTitle(): string {
+      return this.title;
+    },
+
+    getIcon(): string {
+      return this.icon;
+    }
   }
 })
 </script>
@@ -45,5 +59,15 @@ export default defineComponent({
   border-radius: 12px;
   border: none;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.icon {
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem 0.5rem;
 }
 </style>
