@@ -6,7 +6,7 @@
     <div class="mt-3">
       <div class="row">
         <div class="col-3 col-md-12" v-for="mode in modes" :key="mode.id">
-          <FanModeItem :title="mode.title_fa" @click="onFanModeSelect(mode.title)" :selected="getRotationMode === mode.title"/>
+          <FanModeItem :title="mode.title_fa" :icon="mode.icon" @click="onFanModeSelect(mode.title)" :selected="getRotationMode === mode.title"/>
         </div>
       </div>
     </div>
@@ -25,10 +25,10 @@ export default defineComponent({
   data() {
     return {
       modes: [
-        { id: 4, title: 'woodsy', title_fa: 'جنگلی' },
-        { id: 3, title: 'tropical', title_fa: 'استوایی' },
-        { id: 2, title: 'oceanic', title_fa: 'اقیانوسی' },
-        { id: 1, title: 'simple', title_fa: 'ساده' },
+        { id: 4, title: 'woodsy', title_fa: 'جنگلی', icon: 'mdi-pine-tree' },
+        { id: 3, title: 'tropical', title_fa: 'استوایی', icon: 'mdi-weather-sunny' },
+        { id: 2, title: 'oceanic', title_fa: 'اقیانوسی', icon: 'mdi-waves' },
+        { id: 1, title: 'simple', title_fa: 'ساده', icon: 'mdi-weather-windy' },
       ]
     }
   },

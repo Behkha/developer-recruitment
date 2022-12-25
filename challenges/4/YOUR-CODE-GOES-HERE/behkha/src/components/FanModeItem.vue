@@ -3,6 +3,7 @@
     :class="{ selected: selected }"
     class="card p-2 mb-md-3 d-flex flex-column align-items-center justify-content-center"
     >
+    <span class="mdi" :class="getIcon"></span>
     <h6 class="regular-font my-auto">{{getTitle}}</h6>
   </div>
 </template>
@@ -16,6 +17,10 @@ export default defineComponent({
       type: String,
       default: 'Title'
     },
+    icon: {
+      type: String,
+      default: 'mdi-account'
+    },
     selected: {
       type: Boolean,
       default: false
@@ -24,6 +29,10 @@ export default defineComponent({
   computed: {
     getTitle(): string {
       return this.title;
+    },
+
+    getIcon(): string {
+      return this.icon;
     }
   }
 })
